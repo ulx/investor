@@ -1,0 +1,119 @@
+{
+  "project_info": {
+    "project_number": "236003991563",
+    "firebase_url": "https://si20uat.firebaseio.com",
+    "project_id": "si20uat",
+    "storage_bucket": "si20uat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236003991563:android:24b4a8f56009290b36e70e",
+        "android_client_info": {
+          "package_name": "ru.sberbank.sberinvestor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236003991563-ng2jom5mcnpvo7tvt2f5iolah6vhrqbl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6I2GiVAiHU2edPUSVRZ4jHg3fuW7xPQM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "236003991563-ng2jom5mcnpvo7tvt2f5iolah6vhrqbl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "236003991563-396depidu214sjupcumodhct49biogat.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "ru.sberbank.sberinvestor"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236003991563:android:dc7a7ee513d56f8336e70e",
+        "android_client_info": {
+          "package_name": "ru.sberbank.sberinvestor_dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236003991563-ng2jom5mcnpvo7tvt2f5iolah6vhrqbl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6I2GiVAiHU2edPUSVRZ4jHg3fuW7xPQM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "236003991563-ng2jom5mcnpvo7tvt2f5iolah6vhrqbl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "236003991563-396depidu214sjupcumodhct49biogat.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "ru.sberbank.sberinvestor"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236003991563:android:ec275d31a2e12ab736e70e",
+        "android_client_info": {
+          "package_name": "ru.sberbank.sberinvestor_uat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236003991563-ng2jom5mcnpvo7tvt2f5iolah6vhrqbl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6I2GiVAiHU2edPUSVRZ4jHg3fuW7xPQM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "236003991563-ng2jom5mcnpvo7tvt2f5iolah6vhrqbl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "236003991563-396depidu214sjupcumodhct49biogat.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "ru.sberbank.sberinvestor"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
