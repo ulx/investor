@@ -1,6 +1,7 @@
 private object TestLibraryVersion {
     const val JUNIT = "4.13"
     const val TEST_RUNNER = "1.2.0"
+    const val TEST_EXT_RUNNER = "1.1.1"
     const val ESPRESSO_CORE = "3.0.2"
     const val MOCKITO = "3.2.4"
     const val MOCKITO_KOTLIN = "2.2.0"
@@ -9,6 +10,7 @@ private object TestLibraryVersion {
 
 object TestLibraryDependency {
     const val JUNIT = "junit:junit:${TestLibraryVersion.JUNIT}"
+    const val TEST_EXT_RUNNER = "androidx.test.ext:junit:${TestLibraryVersion.TEST_EXT_RUNNER}"
     const val TEST_RUNNER = "androidx.test:runner:${TestLibraryVersion.TEST_RUNNER}"
     const val ESPRESSO_CORE = "com.android.support.test.espresso:espresso-core:${TestLibraryVersion.ESPRESSO_CORE}"
     const val MOCKITO_INLINE = "org.mockito:mockito-inline:${TestLibraryVersion.MOCKITO}"

@@ -1,6 +1,5 @@
 import org.jetbrains.kotlin.config.KotlinCompilerVersion
 
-
 plugins {
     id(GradlePluginId.ANDROID_APPLICATION)
     id(GradlePluginId.GOOGLE_SERVICE)
@@ -8,21 +7,24 @@ plugins {
     kotlin(GradlePluginId.KOTLIN_ANDROID_EXTENSIONS)
     kotlin(GradlePluginId.KOTLIN_KAPT)
     id(GradlePluginId.FABRIC)
-    id (GradlePluginId.SAFE_ARGS)
+    id(GradlePluginId.SAFE_ARGS)
     id(GradlePluginId.KTLINT_GRADLE)
 }
 
 android {
-    compileSdkVersion(29)
-    defaultConfig {
-        applicationId = "ru.sberbank.sberinvestor"
-        minSdkVersion(23)
-        targetSdkVersion(29)
-        versionCode = 1
-        versionName = "1.0"
-        testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+    compileSdkVersion(AndroidConfig.COMPILE_SDK_VERSION)
 
+    defaultConfig {
+        applicationId = AndroidConfig.ID
+        minSdkVersion(AndroidConfig.MIN_SDK_VERSION)
+        targetSdkVersion(AndroidConfig.TARGET_SDK_VERSION)
+        buildToolsVersion(AndroidConfig.BUILD_TOOLS_VERSION)
+
+        versionCode = AndroidConfig.VERSION_CODE
+        versionName = AndroidConfig.VERSION_NAME
+        testInstrumentationRunner = AndroidConfig.TEST_INSTRUMENTATION_RUNNER
     }
+
     signingConfigs {
 //        create("play") {
 //            storeFile = rootProject.file("")
@@ -31,26 +33,29 @@ android {
 //            keyPassword = ""
 //        }
     }
-
-
     buildTypes {
-        named("release").configure {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
-           // signingConfig = signingConfigs["play"]
+        getByName(BuildType.RELEASE) {
+            isMinifyEnabled = BuildTypeRelease.isMinifyEnabled
+            proguardFiles("proguard-android.txt", "proguard-rules.pro")
+        }
+
+        getByName(BuildType.DEBUG) {
+            isMinifyEnabled = BuildTypeDebug.isMinifyEnabled
+        }
+
+        testOptions {
+            unitTests.isReturnDefaultValues = TestOptions.IS_RETURN_DEFAULT_VALUES
+        }
+
+        compileOptions {
+            sourceCompatibility = JavaVersion.VERSION_1_8
+            targetCompatibility = JavaVersion.VERSION_1_8
         }
     }
 
-    bundle {
-        language {
-            enableSplit = true
-        }
-        density {
-            enableSplit = true
-        }
-        abi {
-            enableSplit = true
-        }
+    lintOptions {
+        // By default lint does not check test sources, but setting this option means that lint will not even parse them
+        isIgnoreTestSources = true
     }
 
     compileOptions {
@@ -59,58 +64,41 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
-    viewBinding.isEnabled = true
+    //  // Each feature module that is included in settings.gradle.kts is added here as dynamic feature
+    //    dynamicFeatures = ??
+}
+dependencies {
+    // default dependencies
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+    implementation(kotlin("stdlib-jdk7", KotlinCompilerVersion.VERSION))
+    // androidx support libraries
+    implementation("com.google.android.material:material:1.2.0-alpha05")
+    implementation("androidx.legacy:legacy-support-v13:1.0.0")
+    implementation("androidx.recyclerview:recyclerview:1.1.0")
+    implementation("androidx.cardview:cardview:1.0.0")
+    implementation("androidx.appcompat:appcompat:1.1.0")
+    implementation("androidx.core:core-ktx:1.2.0")
+    implementation("androidx.constraintlayout:constraintlayout:1.1.3")
+    // androidx lifecycle
+    val lifecycleVersion = "2.2.0"
+    implementation("androidx.lifecycle:lifecycle-extensions:$lifecycleVersion")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycleVersion")
 
-    kapt {
-        correctErrorTypes = true
+    api(LibraryDependency.NAVIGATION_FRAGMENT_KTX)
+    api(LibraryDependency.NAVIGATION_UI_KTX)
 
-        javacOptions {
-            option("SomeJavacOption", "OptionValue")
-        }
-        generateStubs = true
-    }
+    // fragment
+    val fragmentVersion = "1.2.2"
+    implementation("androidx.fragment:fragment:$fragmentVersion")
+    implementation("androidx.fragment:fragment-ktx:$fragmentVersion")
+    implementation("androidx.fragment:fragment-testing:$fragmentVersion")
 
-    lintOptions {
-        // By default lint does not check test sources, but setting this option means that lint will not even parse them
-        isIgnoreTestSources = true
-    }
-
-    dependencies {
-        // default dependencies
-        implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-        implementation(kotlin("stdlib-jdk7", KotlinCompilerVersion.VERSION))
-        // androidx support libraries
-        implementation("com.google.android.material:material:1.2.0-alpha05")
-        implementation("androidx.legacy:legacy-support-v13:1.0.0")
-        implementation("androidx.recyclerview:recyclerview:1.1.0")
-        implementation("androidx.cardview:cardview:1.0.0")
-        implementation("androidx.appcompat:appcompat:1.1.0")
-        implementation("androidx.core:core-ktx:1.2.0")
-        implementation("androidx.constraintlayout:constraintlayout:1.1.3")
-        // androidx lifecycle
-        val lifecycleVersion = "2.2.0"
-        implementation("androidx.lifecycle:lifecycle-extensions:$lifecycleVersion")
-        implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
-        implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
-        implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
-        implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycleVersion")
-
-        val navVersion = "2.3.0-alpha02"
-        // navigation
-        implementation( "androidx.navigation:navigation-fragment-ktx:$navVersion")
-        implementation( "androidx.navigation:navigation-ui-ktx:$navVersion")
-        //fragment
-        val fragmentVersion= "1.2.2"
-        implementation("androidx.fragment:fragment:$fragmentVersion")
-        implementation("androidx.fragment:fragment-ktx:$fragmentVersion")
-        implementation("androidx.fragment:fragment-testing:$fragmentVersion")
-        //test base
-        testImplementation("junit:junit:4.12")
-        androidTestImplementation("androidx.test:runner:1.2.0")
-        androidTestImplementation("com.android.support.test.espresso:espresso-core:3.0.2")
-    }
-
+    // test base
+    addTestDependencies()
 }

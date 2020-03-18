@@ -9,6 +9,7 @@ Define common dependencies, so they can be easily updated across feature modules
 fun DependencyHandler.addTestDependencies() {
     testImplementation(TestLibraryDependency.JUNIT)
     androidTestImplementation(TestLibraryDependency.TEST_RUNNER)
+    androidTestImplementation(TestLibraryDependency.TEST_EXT_RUNNER)
     androidTestImplementation(TestLibraryDependency.ESPRESSO_CORE)
     testImplementation(TestLibraryDependency.MOCKITO_INLINE)
     androidTestImplementation(TestLibraryDependency.MOCKITO_ANDROID)
