@@ -2,13 +2,14 @@ import org.jetbrains.kotlin.config.KotlinCompilerVersion
 
 
 plugins {
-    id("com.android.application")
-    id("com.google.gms.google-services")
-    kotlin("android")
-    kotlin("android.extensions")
-    kotlin("kapt")
-    id("io.fabric")
-    id ("androidx.navigation.safeargs.kotlin")
+    id(GradlePluginId.ANDROID_APPLICATION)
+    id(GradlePluginId.GOOGLE_SERVICE)
+    kotlin(GradlePluginId.KOTLIN_ANDROID)
+    kotlin(GradlePluginId.KOTLIN_ANDROID_EXTENSIONS)
+    kotlin(GradlePluginId.KOTLIN_KAPT)
+    id(GradlePluginId.FABRIC)
+    id (GradlePluginId.SAFE_ARGS)
+    id(GradlePluginId.KTLINT_GRADLE)
 }
 
 android {
