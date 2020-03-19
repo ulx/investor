@@ -48,7 +48,6 @@ tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
 }
 
-
 task("staticCheck") {
     description =
         """Mimics all static checks that run on CI.

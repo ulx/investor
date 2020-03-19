@@ -1,5 +1,5 @@
 package ru.sberbank.sberinvestor
 
-import androidx.appcompat.app.AppCompatActivity
+import ru.sberinvestor.core.BaseActivity
 
-class SberActivity : AppCompatActivity()
+class SberActivity : BaseActivity()

@@ -1,7 +1,7 @@
 rootProject.buildFileName = "build.gradle.kts"
 rootProject.name = "Sberinvestor"
 
-include(":app")
+include(":app", ":library:core")
 
 
 pluginManagement {
