@@ -15,7 +15,7 @@ class NavHostActivity : BaseActivity(){
         super.onCreate(savedInstanceState)
         binding = ActivityNavHostBinding.inflate(layoutInflater)
         setContentView(binding.root)
-       // setupBottomNavigation()
+        setupBottomNavigation()
     }
 
     private fun setupBottomNavigation() {
