@@ -10,10 +10,10 @@ private object LibraryVersion {
 
     // 1.1.x version is required in order to support the dark theme functionality in
     // Android Q (adds Theme.MaterialComponents.DayNight)
-    const val MATERIAL = "1.1.0-alpha09"
+    const val MATERIAL = "1.1.0"
     const val CONSTRAINT_LAYOUT = "1.1.3"
     const val CORE_KTX = "1.2.0"
-    const val FRAGMENT_KTX = "1.2.2"
+    const val FRAGMENT_KTX = "1.2.3"
     const val LIFECYCLE = "2.2.0"
     const val COIL = "0.9.1"
 }

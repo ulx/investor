@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
 buildscript {
     repositories {
@@ -14,23 +15,24 @@ buildscript {
         classpath ("com.google.gms:google-services:4.3.3")
         classpath ("com.google.firebase:firebase-plugins:1.1.5")
         classpath(kotlin("gradle-plugin", version = "1.3.70"))
-        classpath ("androidx.navigation:navigation-safe-args-gradle-plugin:2.3.0-alpha03")
+        classpath ("androidx.navigation:navigation-safe-args-gradle-plugin:2.3.0-alpha04")
         classpath ("org.koin:koin-gradle-plugin:2.1.4")
         classpath ("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.6.0")
        // classpath ("org.jlleitschuh.gradle:ktlint-gradle:9.1.1")
     }
 }
 
+/**
+ * Новый механизм подключения плагинов
+ */
 plugins {
     id(GradlePluginId.KTLINT_GRADLE) version "9.1.1"
     id(GradlePluginId.DETEKT) version "1.4.0"
     /**
-     * Плагин для проверки новых версий плагинов и библиотек
-     * запускаем
-     * ./gradlew checkDependencyUpdates
-     * @link https://remal.gitlab.io/gradle-plugins/plugins/name.remal.check-dependency-updates/
+     * плагин для проверки версии подключенных библиотек
+     * ./gradlew dependencyUpdates - запуск
      */
-    id ("name.remal.check-updates") version "1.0.178"
+    id(GradlePluginId.GRADLE_VERSION_PLUGIN) version "0.28.0"
 }
 
 allprojects {
@@ -53,6 +55,31 @@ allprojects {
 // JVM target applied to all Kotlin tasks across all sub-projects
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
+}
+
+tasks {
+    // Gradle versions plugin configuration
+    "dependencyUpdates"(DependencyUpdatesTask::class) {
+        resolutionStrategy {
+            componentSelection {
+                all {
+                    // Do not show pre-release version of library in generated dependency report
+                    val rejected = listOf("alpha", "beta", "rc", "cr", "m", "preview")
+                        .map { qualifier -> Regex("(?i).*[.-]$qualifier[.\\d-]*") }
+                        .any { it.matches(candidate.version) }
+                    if (rejected) {
+                        reject("Release candidate")
+                    }
+
+                    // kAndroid newest version is 0.8.8 (jcenter), however maven repository contains version 0.8.7 and
+                    // plugin fails to recognize it correctly
+                    if (candidate.group == "com.pawegio.kandroid") {
+                        reject("version ${candidate.version} is broken for ${candidate.group}'")
+                    }
+                }
+            }
+        }
+    }
 }
 
 task("staticCheck") {

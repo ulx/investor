@@ -67,8 +67,7 @@ android {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
-    //  // Each feature module that is included in settings.gradle.kts is added here as dynamic feature
-    //    dynamicFeatures = ??
+    dynamicFeatures = ModuleDependency.getDynamicFeatureModules().toMutableSet()
 }
 
 dependencies {

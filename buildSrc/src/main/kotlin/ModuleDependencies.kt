@@ -12,14 +12,10 @@ object ModuleDependency {
     const val FEATURE_LOGIN = "$FEATURE:login"
     const val FEATURE_DASHBOARD = "$FEATURE:dashboard"
 
-    // False positive" function can be private"
-    // See: https://youtrack.jetbrains.com/issue/KT-33610
-//    fun getAllModules() = ModuleDependency::class.memberProperties
-//        .filter { it.isConst }
-//        .map { it.getter.call().toString() }
-//        .toSet()
-//
-//    fun getDynamicFeatureModules() = getAllModules()
-//        .filter { it.startsWith(FEATURE_PREFIX) }
-//        .toSet()
+
+    fun getAllModules() = setOf(APP, LIBRARY_CORE, FEATURE_LOGIN, FEATURE_DASHBOARD)
+
+    fun getDynamicFeatureModules() = getAllModules()
+        .filter { it.startsWith(FEATURE) }
+        .toSet()
 }
