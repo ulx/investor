@@ -2,6 +2,7 @@ plugins {
     id(GradlePluginId.ANDROID_DYNAMIC_FEATURE)
     kotlin(GradlePluginId.KOTLIN_ANDROID)
     kotlin(GradlePluginId.KOTLIN_ANDROID_EXTENSIONS)
+    kotlin(GradlePluginId.KOTLIN_KAPT)
 }
 
 android {

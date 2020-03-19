@@ -2,4 +2,13 @@
     <string name="app_name">Sberinvestor</string>
     <string name="title_login">Module Title</string>
     <string name="title_dashboard">Module Dashboard</string>
+    <string name="title_balance">Module Balance</string>
+    <string name="title_market">Module Market</string>
+    <string name="title_news">Module News</string>
+    <string name="title_profile">Module Profile</string>
+
+    <!--Bottom menu-->
+    <string name="albums">Albums</string>
+    <string name="favorites">Favorites</string>
+    <string name="profile">Profile</string>
 </resources>
