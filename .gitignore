@@ -13,8 +13,6 @@
 .externalNativeBuild
 .cxx
 /buildSrc/build/
-feature/
-libs/
 .idea/codeStyles/
 .idea/dictionaries/
 .idea/gradle.xml
@@ -22,6 +20,4 @@ libs/
 .idea/misc.xml
 .idea/runConfigurations.xml
 .idea/vcs.xml
-app/feature/
-app/libs/
 buildSrc/build/
