@@ -10,12 +10,12 @@ buildscript {
     }
     dependencies {
         classpath ("com.android.tools.build:gradle:3.6.1")
-        classpath ("io.fabric.tools:gradle:1.31.0")
+        classpath ("io.fabric.tools:gradle:1.31.2")
         classpath ("com.google.gms:google-services:4.3.3")
         classpath ("com.google.firebase:firebase-plugins:1.1.5")
         classpath(kotlin("gradle-plugin", version = "1.3.70"))
         classpath ("androidx.navigation:navigation-safe-args-gradle-plugin:2.3.0-alpha03")
-        classpath ("org.koin:koin-gradle-plugin:2.1.3")
+        classpath ("org.koin:koin-gradle-plugin:2.1.4")
         classpath ("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.6.0")
        // classpath ("org.jlleitschuh.gradle:ktlint-gradle:9.1.1")
     }
@@ -24,6 +24,13 @@ buildscript {
 plugins {
     id(GradlePluginId.KTLINT_GRADLE) version "9.1.1"
     id(GradlePluginId.DETEKT) version "1.4.0"
+    /**
+     * Плагин для проверки новых версий плагинов и библиотек
+     * запускаем
+     * ./gradlew checkDependencyUpdates
+     * @link https://remal.gitlab.io/gradle-plugins/plugins/name.remal.check-dependency-updates/
+     */
+    id ("name.remal.check-updates") version "1.0.178"
 }
 
 allprojects {

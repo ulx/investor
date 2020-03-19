@@ -78,10 +78,11 @@ dependencies {
     // default dependencies
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     api(LibraryDependency.KOTLIN)
+
     // androidx support libraries
-    implementation("com.google.android.material:material:1.2.0-alpha05")
-    implementation("androidx.recyclerview:recyclerview:1.1.0")
-    implementation("androidx.constraintlayout:constraintlayout:1.1.3")
+    api(LibraryDependency.MATERIAL)
+    api(LibraryDependency.RECYCLER_VIEW)
+    api(LibraryDependency.CONSTRAINT_LAYOUT)
 
     api(LibraryDependency.CORE_KTX)
     api(LibraryDependency.APP_COMPACT)
