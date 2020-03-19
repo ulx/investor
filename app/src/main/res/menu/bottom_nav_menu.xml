@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/album_nav_graph"
-        android:title="@string/albums"
+        android:id="@+id/feature_balance_nav"
+        android:title="@string/balance"
         android:icon="@drawable/ic_round_dashboard"/>
     <item
-        android:id="@+id/favourite_nav_graph"
-        android:title="@string/favorites"
+        android:id="@+id/feature_login_nav"
+        android:title="@string/login"
         android:icon="@drawable/ic_round_favorite"/>
     <item
-        android:id="@+id/profile_nav_graph"
-        android:title="@string/profile"
+        android:id="@+id/feature_market_nav"
+        android:title="@string/market"
         android:icon="@drawable/ic_round_person"/>
+    <item
+        android:id="@+id/feature_news_nav"
+        android:title="@string/news"
+        android:icon="@drawable/ic_round_person"/>
+    <item
+        android:id="@+id/feature_dashboard_nav"
+        android:title="@string/dashboard"
+        android:icon="@drawable/ic_round_person"/>
+
 </menu>
