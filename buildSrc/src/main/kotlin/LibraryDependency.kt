@@ -16,6 +16,7 @@ private object LibraryVersion {
     const val FRAGMENT_KTX = "1.2.3"
     const val LIFECYCLE = "2.2.0"
     const val COIL = "0.9.1"
+    const val KOIN_VERSION = "2.1.4"
 }
 
 object LibraryDependency {
@@ -59,5 +60,12 @@ object LibraryDependency {
     const val FRAGMENT = "androidx.fragment:fragment:${LibraryVersion.FRAGMENT_KTX}"
     const val FRAGMENT_KTX = "androidx.fragment:fragment-ktx:${LibraryVersion.FRAGMENT_KTX}"
     const val FRAGMENT_TESTING = "androidx.fragment:fragment-testing:${LibraryVersion.FRAGMENT_KTX}"
+
+    // koin
+    const val KOIN_CORE = "org.koin:koin-core:${LibraryVersion.KOIN_VERSION}"
+    const val KOIN_TEST = "org.koin:koin-test:${LibraryVersion.KOIN_VERSION}"
+    const val KOIN_ANDROIDX_SCOPE = "org.koin:koin-androidx-scope:${LibraryVersion.KOIN_VERSION}"
+    const val KOIN_ANDROIDX_VIEW_MODEL = "org.koin:koin-androidx-viewmodel:${LibraryVersion.KOIN_VERSION}"
+    const val KOIN_ANDROIDX_FRAGMENT = "org.koin:koin-androidx-fragment:${LibraryVersion.KOIN_VERSION}"
 }
 

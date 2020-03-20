@@ -1,4 +1,5 @@
 object GradlePluginId {
+    const val KOIN = "koin"
     const val KOTLIN_KAPT = "kapt"
     const val DETEKT = "io.gitlab.arturbosch.detekt"
     const val KTLINT_GRADLE = "org.jlleitschuh.gradle.ktlint"
