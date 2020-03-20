@@ -79,6 +79,7 @@ dependencies {
     // default dependencies
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     api(LibraryDependency.KOTLIN)
+    implementation(LibraryDependency.PLAY_CORE)
 
     // androidx support libraries
     api(LibraryDependency.MATERIAL)

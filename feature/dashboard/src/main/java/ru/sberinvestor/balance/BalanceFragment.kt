@@ -1,4 +1,4 @@
-package ru.sberinvestor.profile
+package ru.sberinvestor.balance
 
 
 import android.os.Bundle
@@ -6,19 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
+
 import ru.sberinvestor.core.fragment.BaseFragment
-import ru.sberinvestor.profile.databinding.FmtProfileBinding
+import ru.sberinvestor.dashboard.databinding.FmtBalanceBinding
 
-class ProfileFragment : BaseFragment() {
+class BalanceFragment : BaseFragment() {
 
-    private var _binding: FmtProfileBinding? = null
+    private var _binding: FmtBalanceBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FmtProfileBinding.inflate(inflater, container, false)
+        _binding = FmtBalanceBinding.inflate(inflater, container, false)
         return binding.root
     }
 

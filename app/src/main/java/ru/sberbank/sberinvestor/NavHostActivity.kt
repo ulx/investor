@@ -1,6 +1,7 @@
 package ru.sberbank.sberinvestor
 
 import android.os.Bundle
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import kotlinx.android.synthetic.main.activity_nav_host.*
@@ -15,11 +16,6 @@ class NavHostActivity : BaseActivity(){
         super.onCreate(savedInstanceState)
         binding = ActivityNavHostBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setupBottomNavigation()
     }
 
-    private fun setupBottomNavigation() {
-        val navController = navHostFragment.findNavController()
-        binding.bottomNav.setupWithNavController(navController)
-    }
 }

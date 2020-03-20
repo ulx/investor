@@ -4,11 +4,7 @@ rootProject.name = "Sberinvestor"
 
 include(ModuleDependency.APP, ModuleDependency.LIBRARY_CORE,
     ModuleDependency.FEATURE_LOGIN,
-    ModuleDependency.FEATURE_DASHBOARD,
-    ModuleDependency.FEATURE_BALANCE,
-    ModuleDependency.FEATURE_MARKET,
-    ModuleDependency.FEATURE_NEWS,
-    ModuleDependency.FEATURE_PROFILE)
+    ModuleDependency.FEATURE_DASHBOARD)
 
 
 pluginManagement {

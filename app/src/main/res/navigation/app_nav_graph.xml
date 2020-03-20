@@ -2,11 +2,11 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/app_navigation_graph"
-            app:startDestination="@id/feature_balance_nav">
+            app:startDestination="@id/feature_dashboard_nav">
+    <include app:graph="@navigation/feature_dashboard_nav"/>
+    <include app:graph="@navigation/feature_login_nav"/>
     <include app:graph="@navigation/feature_balance_nav"/>
     <include app:graph="@navigation/feature_profile_nav"/>
-    <include app:graph="@navigation/feature_login_nav"/>
     <include app:graph="@navigation/feature_market_nav"/>
     <include app:graph="@navigation/feature_news_nav"/>
-    <include app:graph="@navigation/feature_dashboard_nav"/>
 </navigation>

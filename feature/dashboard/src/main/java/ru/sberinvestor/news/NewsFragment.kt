@@ -7,7 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 
 import ru.sberinvestor.core.fragment.BaseFragment
-import ru.sberinvestor.news.databinding.FmtNewsBinding
+import ru.sberinvestor.dashboard.databinding.FmtNewsBinding
+
 
 class NewsFragment : BaseFragment() {
 

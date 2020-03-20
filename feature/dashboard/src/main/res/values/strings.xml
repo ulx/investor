@@ -1,3 +1,7 @@
 <resources>
     <string name="under_construction">Under construction dashboard</string>
+    <string name="under_construction_balance">Under construction balance</string>
+    <string name="under_construction_market">Under construction market</string>
+    <string name="under_construction_news">Under construction news</string>
+    <string name="under_construction_profile">Under construction profile</string>
 </resources>

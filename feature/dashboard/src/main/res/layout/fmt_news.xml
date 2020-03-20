@@ -10,7 +10,7 @@
 
     <TextView
         android:id="@+id/underConstructionTextView"
-        android:text="@string/under_construction"
+        android:text="@string/under_construction_news"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18sp"
