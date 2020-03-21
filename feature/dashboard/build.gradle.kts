@@ -3,6 +3,7 @@ plugins {
     kotlin(GradlePluginId.KOTLIN_ANDROID)
     kotlin(GradlePluginId.KOTLIN_ANDROID_EXTENSIONS)
     id(GradlePluginId.SAFE_ARGS)
+    id(GradlePluginId.KOIN)
 }
 
 android {

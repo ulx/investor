@@ -102,11 +102,9 @@ dependencies {
     // fragment
     api(LibraryDependency.FRAGMENT)
     api(LibraryDependency.FRAGMENT_KTX)
-    api(LibraryDependency.FRAGMENT_TESTING)
 
     // koin
-    api(LibraryDependency.KOIN_CORE)
-    api(LibraryDependency.KOIN_TEST)
+    api(LibraryDependency.KOIN_ANDROID)
     api(LibraryDependency.KOIN_ANDROIDX_FRAGMENT)
     api(LibraryDependency.KOIN_ANDROIDX_SCOPE)
     api(LibraryDependency.KOIN_ANDROIDX_VIEW_MODEL)

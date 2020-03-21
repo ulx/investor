@@ -62,7 +62,7 @@ object LibraryDependency {
     const val FRAGMENT_TESTING = "androidx.fragment:fragment-testing:${LibraryVersion.FRAGMENT_KTX}"
 
     // koin
-    const val KOIN_CORE = "org.koin:koin-core:${LibraryVersion.KOIN_VERSION}"
+    const val KOIN_ANDROID = "org.koin:koin-android:${LibraryVersion.KOIN_VERSION}"
     const val KOIN_TEST = "org.koin:koin-test:${LibraryVersion.KOIN_VERSION}"
     const val KOIN_ANDROIDX_SCOPE = "org.koin:koin-androidx-scope:${LibraryVersion.KOIN_VERSION}"
     const val KOIN_ANDROIDX_VIEW_MODEL = "org.koin:koin-androidx-viewmodel:${LibraryVersion.KOIN_VERSION}"
