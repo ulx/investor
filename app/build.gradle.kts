@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.config.KotlinCompilerVersion
-
 plugins {
     id(GradlePluginId.ANDROID_APPLICATION)
     id(GradlePluginId.GOOGLE_SERVICE)

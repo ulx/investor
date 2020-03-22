@@ -67,8 +67,8 @@ class DashboardFragment : BaseFragment() {
         return binding.root
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onStop() {
+        super.onStop()
         unloadKoinModules(module)
     }
 

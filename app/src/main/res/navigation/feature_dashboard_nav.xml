@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/feature_dashboard_nav" app:startDestination="@+id/dashboardFragment">
-    <fragment android:id="@+id/dashboardFragment"
-              android:name="ru.sberinvestor.dashboard.DashboardFragment"
-              android:label="DashboardFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/feature_dashboard_nav"
+    app:startDestination="@+id/dashboardFragment">
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="ru.sberinvestor.dashboard.DashboardFragment"
+        android:label="DashboardFragment">
         <action
             android:id="@+id/action_to_login"
-            app:destination="@+id/feature_login_nav"/>
+            app:destination="@+id/feature_login_nav" />
         <action
             android:id="@+id/action_to_balance"
-            app:destination="@+id/feature_balance_nav"/>
+            app:destination="@+id/feature_balance_nav" />
         <action
             android:id="@+id/action_to_news"
-            app:destination="@+id/feature_news_nav"/>
+            app:destination="@+id/feature_news_nav" />
         <action
             android:id="@+id/action_to_profile"
-            app:destination="@+id/feature_profile_nav"/>
+            app:destination="@+id/feature_profile_nav" />
         <action
             android:id="@+id/action_to_market"
-            app:destination="@+id/feature_market_nav"/>
+            app:destination="@+id/feature_market_nav" />
     </fragment>
 </navigation>

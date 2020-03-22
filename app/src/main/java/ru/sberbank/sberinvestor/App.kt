@@ -7,7 +7,7 @@ import org.koin.core.context.startKoin
 import ru.sberbank.sberinvestor.di.appModule
 
 class App : Application() {
-    override fun onCreate(){
+    override fun onCreate() {
         super.onCreate()
         // start Koin!
         startKoin {
@@ -15,7 +15,7 @@ class App : Application() {
             // Android context
             androidContext(this@App)
             // modules
-             modules(appModule)
+            modules(appModule)
         }
     }
 }
