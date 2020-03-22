@@ -46,5 +46,8 @@ dependencies {
     api(LibraryDependency.COROUTINES_ANDROID)
     api(LibraryDependency.CORE_KTX)
 
+    implementation(LibraryDependency.OK_HTTP)
+    implementation(LibraryDependency.LOGGING_INTERCEPTOR)
+
     addTestDependencies()
 }
