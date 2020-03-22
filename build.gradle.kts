@@ -51,6 +51,14 @@ allprojects {
     }
 }
 
+subprojects {
+    pluginManager.withPlugin("kotlin-kapt") {
+        configure<org.jetbrains.kotlin.gradle.plugin.KaptExtension> {
+            useBuildCache = true
+        }
+    }
+}
+
 // JVM target applied to all Kotlin tasks across all sub-projects
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
