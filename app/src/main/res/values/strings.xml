@@ -14,4 +14,5 @@
     <string name="news">News</string>
     <string name="profile">Profile</string>
     <string name="dashboard">Dashboard</string>
+    <string name="title_simplefeature">Simple Module</string>
 </resources>
