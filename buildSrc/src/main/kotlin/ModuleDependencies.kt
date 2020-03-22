@@ -8,6 +8,8 @@ object ModuleDependency {
     private const val LIBRARY = ":library"
     const val LIBRARY_SIMPLE = "$LIBRARY:simple"
     const val LIBRARY_CORE = "$LIBRARY:core"
+    const val LIBRARY_STORAGE = "$LIBRARY:storage"
+    const val LIBRARY_NETWORK = "$LIBRARY:network"
 
     private const val FEATURE = ":feature"
     const val FEATURE_SIMPLE = "$FEATURE:simplefeature"
@@ -19,7 +21,15 @@ object ModuleDependency {
 //    const val FEATURE_PROFILE = "$FEATURE:profile"
 
 
-    fun getAllModules() = setOf(APP,LIBRARY_SIMPLE, LIBRARY_CORE, FEATURE_SIMPLE, FEATURE_LOGIN, FEATURE_DASHBOARD)
+    fun getAllModules() = setOf(
+        APP,
+        LIBRARY_SIMPLE,
+        LIBRARY_CORE,
+        LIBRARY_STORAGE,
+        LIBRARY_NETWORK,
+        FEATURE_SIMPLE,
+        FEATURE_LOGIN,
+        FEATURE_DASHBOARD)
 
     fun getDynamicFeatureModules() = getAllModules()
         .filter { it.startsWith(FEATURE) }
