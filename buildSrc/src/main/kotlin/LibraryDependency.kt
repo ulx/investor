@@ -17,6 +17,7 @@ private object LibraryVersion {
     const val LIFECYCLE = "2.2.0"
     const val COIL = "0.9.1"
     const val KOIN_VERSION = "2.1.4"
+    const val ROOM_VERSION = "2.2.5"
 }
 
 object LibraryDependency {
@@ -67,5 +68,11 @@ object LibraryDependency {
     const val KOIN_ANDROIDX_SCOPE = "org.koin:koin-androidx-scope:${LibraryVersion.KOIN_VERSION}"
     const val KOIN_ANDROIDX_VIEW_MODEL = "org.koin:koin-androidx-viewmodel:${LibraryVersion.KOIN_VERSION}"
     const val KOIN_ANDROIDX_FRAGMENT = "org.koin:koin-androidx-fragment:${LibraryVersion.KOIN_VERSION}"
+
+    // room  see https://developer.android.com/jetpack/androidx/releases/room
+    const val ROOM_CORE = "androidx.room:room-runtime:${LibraryVersion.ROOM_VERSION}"
+    const val ROOM_COMPILER = "androidx.room:room-compiler:${LibraryVersion.ROOM_VERSION}"
+    const val ROOM_KTX = "androidx.room:room-ktx:${LibraryVersion.ROOM_VERSION}"
+    const val ROOM_TESTING = "androidx.room:room-testing:${LibraryVersion.ROOM_VERSION}"
 }
 

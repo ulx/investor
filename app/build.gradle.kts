@@ -74,6 +74,8 @@ android {
 dependencies {
 
     api(project(ModuleDependency.LIBRARY_CORE))
+    api(project(ModuleDependency.LIBRARY_NETWORK))
+    api(project(ModuleDependency.LIBRARY_STORAGE))
 
     // default dependencies
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))

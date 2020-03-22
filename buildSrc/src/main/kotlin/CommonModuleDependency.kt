@@ -18,6 +18,7 @@ fun DependencyHandler.addTestDependencies() {
     testImplementation(TestLibraryDependency.ANDROID_X_CORE_TESTING)
     testImplementation(LibraryDependency.KOIN_TEST)
     androidTestImplementation(LibraryDependency.FRAGMENT_TESTING)
+    testImplementation(LibraryDependency.ROOM_TESTING)
 }
 
 

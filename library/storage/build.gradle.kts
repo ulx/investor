@@ -2,6 +2,7 @@ plugins {
     id(GradlePluginId.ANDROID_LIBRARY)
     kotlin(GradlePluginId.KOTLIN_ANDROID)
     kotlin(GradlePluginId.KOTLIN_ANDROID_EXTENSIONS)
+    kotlin(GradlePluginId.KOTLIN_KAPT)
 }
 
 android {
@@ -14,6 +15,16 @@ android {
         versionCode = AndroidConfig.VERSION_CODE
         versionName = AndroidConfig.VERSION_NAME
         testInstrumentationRunner = AndroidConfig.TEST_INSTRUMENTATION_RUNNER
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = mapOf(
+                    "room.schemaLocation" to "$projectDir/schemas".toString(),
+                    "room.incremental" to "true",
+                    "room.expandProjection" to "true"
+                )
+            }
+        }
     }
 
     buildTypes {
@@ -30,6 +41,7 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+
     }
 
     kotlinOptions {
@@ -45,6 +57,9 @@ dependencies {
     api(LibraryDependency.KOTLIN)
     api(LibraryDependency.COROUTINES_ANDROID)
     api(LibraryDependency.CORE_KTX)
+    implementation(LibraryDependency.ROOM_CORE)
+    kapt(LibraryDependency.ROOM_COMPILER)
+    implementation(LibraryDependency.ROOM_KTX)
 
     addTestDependencies()
 }
