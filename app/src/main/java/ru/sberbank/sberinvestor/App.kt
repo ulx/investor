@@ -12,6 +12,7 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 import ru.sberbank.sberinvestor.di.appModule
+import ru.sberbank.sberinvestor.di.netModule
 
 
 class App : Application() {
@@ -23,7 +24,7 @@ class App : Application() {
             // Android context
             androidContext(this@App)
             // modules
-            modules(appModule)
+            modules(appModule + netModule)
         }
         initFlipper()
     }

@@ -1,8 +1,9 @@
 @file:Suppress("detekt.StringLiteralDuplication")
 
 private object LibraryVersion {
-    const val RETROFIT = "2.7.1"
-    const val OK_HTTP = "4.3.1"
+    const val RETROFIT = "2.7.2"
+    const val OK_HTTP = "4.4.1"
+    const val GSON = "2.8.5"
     const val PLAY_CORE = "1.6.4"
     const val APP_COMPACT = "1.1.0"
     const val RECYCLER_VIEW = "1.1.0"
@@ -24,8 +25,10 @@ object LibraryDependency {
     const val KOTLIN = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${CoreVersion.KOTLIN}"
 
     // Required by Android dynamic feature modules and SafeArgs
-    const val KOTLIN_REFLECT = "org.jetbrains.kotlin:kotlin-reflect:${CoreVersion.KOTLIN}"
     const val RETROFIT = "com.squareup.retrofit2:retrofit:${LibraryVersion.RETROFIT}"
+    const val RETROFIT_MOCK = "com.squareup.retrofit2:retrofit-mock:${LibraryVersion.RETROFIT}"
+    const val RETROFIT_GSON = "com.squareup.retrofit2:converter-gson:${LibraryVersion.RETROFIT}"
+    const val GSON = "com.google.code.gson:gson:${LibraryVersion.GSON}"
 
     // Retrofit will use okhttp 4 (it tas binary capability with okhttp 3)
     // See: https://square.github.io/okhttp/upgrading_to_okhttp_4/

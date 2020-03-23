@@ -46,8 +46,12 @@ dependencies {
     api(LibraryDependency.COROUTINES_ANDROID)
     api(LibraryDependency.CORE_KTX)
 
-    implementation(LibraryDependency.OK_HTTP)
+    api(LibraryDependency.OK_HTTP)
     implementation(LibraryDependency.LOGGING_INTERCEPTOR)
+    implementation(LibraryDependency.RETROFIT)
+    implementation(LibraryDependency.RETROFIT_MOCK)
+    implementation(LibraryDependency.RETROFIT_GSON)
+    implementation(LibraryDependency.GSON)
 
     addTestDependencies()
 }
