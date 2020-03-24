@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 
-class LoginViewModule(private val handle: SavedStateHandle) : ViewModel(){
+class LoginViewModel(private val handle: SavedStateHandle) : ViewModel(){
 
     private val countKey = "count_key"
     private val _count = handle.getLiveData(countKey, -1)

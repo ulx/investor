@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import org.koin.androidx.viewmodel.ext.android.stateViewModel
 import org.koin.core.context.loadKoinModules
-import org.koin.core.context.unloadKoinModules
 import ru.sberinvestor.balance.di.balanceModule
 
 
@@ -20,7 +19,7 @@ class BalanceFragment : BaseFragment() {
     private var _binding: FmtBalanceBinding? = null
     private val binding get() = _binding!!
     private val module = balanceModule
-    private val viewModel: BalanceViewModule by stateViewModel()
+    private val viewModel: BalanceViewModel by stateViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

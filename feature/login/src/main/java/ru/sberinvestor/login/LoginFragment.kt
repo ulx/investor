@@ -19,7 +19,7 @@ class LoginFragment : BaseFragment() {
     private var _binding: FmtLoginSberBinding? = null
     private val binding get() = _binding!!
     private val module = loginModule
-    private val viewModel: LoginViewModule by stateViewModel()
+    private val viewModel: LoginViewModel by stateViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

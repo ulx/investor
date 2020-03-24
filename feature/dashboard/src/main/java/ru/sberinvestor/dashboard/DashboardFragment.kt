@@ -24,7 +24,7 @@ class DashboardFragment : BaseFragment() {
     private var _binding: FmtDashboardSberBinding? = null
     private val binding get() = _binding!!
     private val module = dashboardModule
-    private val viewModel: DashboardViewModule by stateViewModel()
+    private val viewModel: DashboardViewModel by stateViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -1,10 +1,10 @@
-package ru.sberinvestor.dashboard
+package ru.sberinvestor.balance
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 
-class DashboardViewModule(private val handle: SavedStateHandle) : ViewModel(){
+class BalanceViewModel(private val handle: SavedStateHandle) : ViewModel(){
 
     private val countKey = "count_key"
     private val _count = handle.getLiveData(countKey, -1)
