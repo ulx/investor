@@ -18,8 +18,7 @@ class InvestorServiceExecutor(val isMock: Boolean = false, val api : InvestorSer
             val result = service.getDictionaries()
             if (result.isSuccessful) {
                 return NetResult.Success(
-                    result.code(),
-                    result.body() ?: Dictionaries()
+                    result.code(), result.body() ?: Dictionaries()
                 )
             }else {
                 NetResult.Failure(result.code())

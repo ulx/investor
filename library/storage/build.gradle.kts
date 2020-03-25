@@ -57,7 +57,7 @@ dependencies {
     api(LibraryDependency.KOTLIN)
     api(LibraryDependency.COROUTINES_ANDROID)
     api(LibraryDependency.CORE_KTX)
-    implementation(LibraryDependency.ROOM_CORE)
+    api(LibraryDependency.ROOM_CORE)
     kapt(LibraryDependency.ROOM_COMPILER)
     implementation(LibraryDependency.ROOM_KTX)
 
