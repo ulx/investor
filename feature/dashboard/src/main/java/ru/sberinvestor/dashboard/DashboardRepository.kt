@@ -1,6 +1,8 @@
 package ru.sberinvestor.dashboard
 
 import android.util.Log
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import ru.sberbank.network.api.InvestorServiceExecutor
 import ru.sberbank.network.entity.Dictionaries
 import ru.sberbank.sberinvestor.extenstion.toAssetDb
@@ -16,6 +18,10 @@ class DashboardRepository(private val netSource: InvestorServiceExecutor, privat
             result.data.resp.assets.forEach{
                Log.i("DashboardRepository", "index = ${assetDao.insert(it.toAssetDb())}")
             }
+        }
+        withContext(Dispatchers.IO) {
+            val l = assetDao.getAlphabetizedWords()
+            Log.i("DashboardRepository", l.joinToString())
         }
         return result
     }
