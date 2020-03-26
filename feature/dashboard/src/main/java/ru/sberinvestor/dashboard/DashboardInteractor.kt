@@ -1,5 +1,6 @@
 package ru.sberinvestor.dashboard
 
+import kotlinx.coroutines.flow.Flow
 import ru.sberbank.network.entity.Dictionaries
 import ru.sberinvestor.core.state.InvestorResult
 
@@ -9,4 +10,5 @@ import ru.sberinvestor.core.state.InvestorResult
  */
 class DashboardInteractor(private val repo : DashboardRepository) {
     suspend fun getDictionaries() : InvestorResult<Dictionaries> = repo.getDictionaries()
+    suspend fun getDictionaries2() : Flow<InvestorResult<Int>> = repo.getDictionaries2()
 }

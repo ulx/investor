@@ -5,12 +5,15 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import ru.sberinvestor.core.state.CodeState
 import ru.sberinvestor.core.state.InvestorResult
 
 class DashboardViewModel(private val handle: SavedStateHandle, private val interactor: DashboardInteractor) : ViewModel(){
 
+    private lateinit var countCollect: Flow<InvestorResult<Int>>
     private val countKey = "count_key"
     private val dataKey = "data_key"
     private val _count = handle.getLiveData(countKey, -1)
@@ -21,7 +24,20 @@ class DashboardViewModel(private val handle: SavedStateHandle, private val inter
         handle.set(countKey, index)
         viewModelScope.launch {
            when(val res = interactor.getDictionaries()){
-                is InvestorResult.Success -> Log.i("DashboardViewModel", "value = ${res.data}")
+                is InvestorResult.Success -> {
+                    Log.i("DashboardViewModel", "value = ${res.data}")
+                    _count.postValue(res.data.resp.companies.size)
+                   countCollect = interactor.getDictionaries2()
+                    countCollect.collect { action ->
+                        if (action is InvestorResult.Success){
+                            _count.postValue(action.data)
+                            countCollect.collect()
+                        }
+                        if (action is InvestorResult.Loading) {
+                            _count.postValue(action.data)
+                        }
+                    }
+                }
                 is InvestorResult.Error -> showError(res.code)
                 is InvestorResult.Loading -> {if (res.data.resp.instruments.isNotEmpty()) {
                     handle.set(dataKey, res.data)
@@ -40,6 +56,9 @@ class DashboardViewModel(private val handle: SavedStateHandle, private val inter
 
     override fun onCleared() {
         super.onCleared()
+        viewModelScope.launch {
+            countCollect.collect()
+        }
     }
 
 }
