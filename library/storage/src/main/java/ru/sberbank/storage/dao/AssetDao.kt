@@ -10,7 +10,7 @@ import ru.sberbank.storage.entity.AssetDb
 interface AssetDao {
 
     @Query("SELECT * from asset_table")
-    fun getAlphabetizedWords(): List<AssetDb>
+    suspend fun getAlphabetizedWords(): List<AssetDb>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(assetDb: AssetDb) : Long
