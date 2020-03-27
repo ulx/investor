@@ -16,8 +16,8 @@ buildscript {
         classpath ("com.google.firebase:firebase-plugins:1.1.5")
         classpath(kotlin("gradle-plugin", version = "1.3.70"))
         classpath ("androidx.navigation:navigation-safe-args-gradle-plugin:2.3.0-alpha04")
-        classpath ("org.koin:koin-gradle-plugin:2.1.4")
-        classpath ("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.6.0")
+        classpath ("org.koin:koin-gradle-plugin:2.1.5")
+        classpath ("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.7.1")
     }
 }
 

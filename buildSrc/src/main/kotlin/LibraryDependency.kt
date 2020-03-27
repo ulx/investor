@@ -1,10 +1,10 @@
 @file:Suppress("detekt.StringLiteralDuplication")
 
 private object LibraryVersion {
-    const val RETROFIT = "2.7.2"
+    const val RETROFIT = "2.8.1"
     const val OK_HTTP = "4.4.1"
-    const val GSON = "2.8.5"
-    const val PLAY_CORE = "1.6.4"
+    const val GSON = "2.8.6"
+    const val PLAY_CORE = "1.7.1"
     const val APP_COMPACT = "1.1.0"
     const val RECYCLER_VIEW = "1.1.0"
     const val COORDINATOR_LAYOUT = "1.1.0"
@@ -17,7 +17,7 @@ private object LibraryVersion {
     const val FRAGMENT_KTX = "1.2.3"
     const val LIFECYCLE = "2.2.0"
     const val COIL = "0.9.1"
-    const val KOIN_VERSION = "2.1.4"
+    const val KOIN_VERSION = "2.1.5"
     const val ROOM_VERSION = "2.2.5"
 }
 
@@ -49,6 +49,8 @@ object LibraryDependency {
     // navigation
     const val NAVIGATION_FRAGMENT_KTX = "androidx.navigation:navigation-fragment-ktx:${CoreVersion.NAVIGATION}"
     const val NAVIGATION_UI_KTX = "androidx.navigation:navigation-ui-ktx:${CoreVersion.NAVIGATION}"
+    const val NAVIGATION_DYNAMIC_FEATURE_FRAGMENT = "androidx.navigation:navigation-dynamic-features-fragment:${CoreVersion.NAVIGATION}"
+
 
     // image loader
     const val COIL = "io.coil-kt:coil:${LibraryVersion.COIL}"
