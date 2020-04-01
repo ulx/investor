@@ -3,9 +3,7 @@ package ru.sberinvestor.dashboard
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.toList
-import kotlinx.coroutines.newSingleThreadContext
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.*
 import org.junit.jupiter.api.AfterEach

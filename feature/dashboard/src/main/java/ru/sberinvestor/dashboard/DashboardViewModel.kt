@@ -1,13 +1,11 @@
 package ru.sberinvestor.dashboard
 
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.SavedStateHandle
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import kotlinx.coroutines.Dispatchers
 
 import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.Dispatchers.Main
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
@@ -22,7 +20,7 @@ class DashboardViewModel(private val handle: SavedStateHandle, private val inter
     private lateinit var dictionaryCollect: Flow<InvestorResult<Dictionaries>>
     private val countKey = "count_key"
     private val dataKey = "data_key"
-    private val _count = handle.getLiveData(countKey, -1)
+    private val _count = MutableLiveData(handle.get(countKey) ?: 0)
     val count: LiveData<Int>
         get() = _count
 
@@ -44,9 +42,6 @@ class DashboardViewModel(private val handle: SavedStateHandle, private val inter
                     }
                     is InvestorResult.Loading -> {
                         _count.postValue(-999)
-//                        if (res.data.resp.instruments.isNotEmpty()) {
-//                            handle.set(dataKey, res.data)
-//                        }
                     }
                 }
             }
