@@ -39,10 +39,10 @@ class DashboardRepository(private val netSource: InvestorServiceExecutor, privat
     /**
      * Этот запрос может возвращать только один статус
      */
-    suspend fun getDictionaries2() : InvestorResult<Dictionaries> {
+    suspend fun getDictionaries2(): InvestorResult<Dictionaries> {
         val result = netSource.getDictionaries().toInvestorResult()
-        if (result is InvestorResult.Success){
-            result.data.resp.assets.forEach{
+        if (result is InvestorResult.Success) {
+            result.data.resp.assets.forEach {
                 Log.i("DashboardRepository", "index = ${assetDao.insert(it.toAssetDb())}")
             }
         }

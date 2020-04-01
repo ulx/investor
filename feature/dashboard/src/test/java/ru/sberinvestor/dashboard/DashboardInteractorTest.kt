@@ -25,9 +25,9 @@ internal class DashboardInteractorTest : KoinTest {
 
     private val testDispatcher = TestCoroutineDispatcher()
 
-    private val dao = mockk<DashboardRepository>(relaxed = true)
+    private val repository = mockk<DashboardRepository>(relaxed = true)
 
-    private val repository = DashboardInteractor(dao)
+    private val interactor = DashboardInteractor(repository)
 
     @Before
     fun setUp() {
@@ -43,11 +43,11 @@ internal class DashboardInteractorTest : KoinTest {
         val publisher = flow<InvestorResult<Dictionaries>> {
             emit(InvestorResult.Loading(Dictionaries()))
         }
-        coEvery { dao.getDictionaries() }.returns(publisher)
-        repository.getDictionaries().onEach {
+        coEvery { repository.getDictionaries() }.returns(publisher)
+        interactor.getDictionaries().onEach {
             assertTrue(it is InvestorResult.Loading)
         }.collect()
 
-        coVerify { dao.getDictionaries() }
+        coVerify { repository.getDictionaries() }
     }
 }

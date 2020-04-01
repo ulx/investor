@@ -40,6 +40,11 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
+    // 4) JUnit 5 will bundle in files with identical paths; exclude them
+    packagingOptions {
+        exclude("META-INF/LICENSE*")
+    }
+
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
