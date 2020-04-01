@@ -1,16 +1,24 @@
 
-rootProject.buildFileName = "build.gradle.kts"
-rootProject.name = "Sberinvestor"
 
-include(ModuleDependency.APP,
-    ModuleDependency.LIBRARY_SIMPLE,
-    ModuleDependency.LIBRARY_CORE,
-    ModuleDependency.LIBRARY_STORAGE,
-    ModuleDependency.LIBRARY_NETWORK,
-    ModuleDependency.FEATURE_SIMPLE,
-    ModuleDependency.FEATURE_LOGIN,
-    ModuleDependency.FEATURE_DASHBOARD)
-
+//include(ModuleDependency.APP,
+//    ModuleDependency.LIBRARY_SIMPLE,
+//    ModuleDependency.LIBRARY_CORE,
+//    ModuleDependency.LIBRARY_STORAGE,
+//    ModuleDependency.LIBRARY_NETWORK,
+//    ModuleDependency.FEATURE_SIMPLE,
+//    ModuleDependency.FEATURE_LOGIN,
+//    ModuleDependency.FEATURE_DASHBOARD)
+val library = ":library"
+val feature = ":feature"
+include(":app",
+    "$library:simple",
+    "$library:core",
+    "$library:network",
+    "$library:storage",
+    "$feature:simplefeature",
+    "$feature:login",
+    "$feature:dashboard"
+)
 
 pluginManagement {
     repositories {
@@ -21,3 +29,10 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
+rootProject.buildFileName = "build.gradle.kts"
+rootProject.name = "Sberinvestor"
+
+//include(*(ModuleDependency.getAllModules.toTypedArray()))
+
+

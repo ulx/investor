@@ -20,8 +20,7 @@ object ModuleDependency {
 //    const val FEATURE_NEWS = "$FEATURE:news"
 //    const val FEATURE_PROFILE = "$FEATURE:profile"
 
-
-    fun getAllModules() = setOf(
+     val getAllModules = setOf(
         APP,
         LIBRARY_SIMPLE,
         LIBRARY_CORE,
@@ -31,7 +30,7 @@ object ModuleDependency {
         FEATURE_LOGIN,
         FEATURE_DASHBOARD)
 
-    fun getDynamicFeatureModules() = getAllModules()
+    fun getDynamicFeatureModules() = getAllModules
         .filter { it.startsWith(FEATURE) }
         .toSet()
 }

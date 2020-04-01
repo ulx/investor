@@ -12,6 +12,7 @@ object GradlePluginId {
     const val SAFE_ARGS = "androidx.navigation.safeargs.kotlin"
     const val FABRIC = "io.fabric"
     const val GOOGLE_SERVICE = "com.google.gms.google-services"
+    const val JUNIT5 = "de.mannodermaus.android-junit5"
 }
 
 

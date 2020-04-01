@@ -13,7 +13,8 @@ import kotlinx.coroutines.test.setMain
 import org.junit.After
 import org.junit.Assert.assertTrue
 import org.junit.Before
-import org.junit.Test
+import org.junit.jupiter.api.Test
+
 import org.koin.test.KoinTest
 import ru.sberbank.network.entity.Dictionaries
 import ru.sberinvestor.core.state.InvestorResult

@@ -18,6 +18,7 @@ buildscript {
         classpath ("androidx.navigation:navigation-safe-args-gradle-plugin:2.3.0-alpha04")
         classpath ("org.koin:koin-gradle-plugin:2.1.5")
         classpath ("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.7.1")
+        classpath ("de.mannodermaus.gradle.plugins:android-junit5:1.6.0.0") // junit5
     }
 }
 
