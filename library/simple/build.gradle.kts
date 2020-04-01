@@ -46,5 +46,5 @@ dependencies {
     api(LibraryDependency.COROUTINES_ANDROID)
     api(LibraryDependency.CORE_KTX)
 
-    addTestDependencies()
+   // addTestDependencies()
 }

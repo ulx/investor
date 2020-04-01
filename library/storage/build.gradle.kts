@@ -61,5 +61,5 @@ dependencies {
     kapt(LibraryDependency.ROOM_COMPILER)
     implementation(LibraryDependency.ROOM_KTX)
 
-    addTestDependencies()
+    //addTestDependencies()
 }

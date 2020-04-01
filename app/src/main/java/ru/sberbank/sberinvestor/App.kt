@@ -5,7 +5,7 @@ import com.facebook.flipper.android.AndroidFlipperClient
 import com.facebook.flipper.android.utils.FlipperUtils
 import com.facebook.flipper.plugins.inspector.DescriptorMapping
 import com.facebook.flipper.plugins.inspector.InspectorFlipperPlugin
-import com.facebook.flipper.plugins.leakcanary.LeakCanaryFlipperPlugin
+//import com.facebook.flipper.plugins.leakcanary.LeakCanaryFlipperPlugin
 import com.facebook.flipper.plugins.network.NetworkFlipperPlugin
 import com.facebook.soloader.SoLoader
 import org.koin.android.ext.koin.androidContext
@@ -37,7 +37,7 @@ class App : Application() {
             client.addPlugin(InspectorFlipperPlugin(this, DescriptorMapping.withDefaults()))
             val networkFlipperPlugin = NetworkFlipperPlugin()
             client.addPlugin(networkFlipperPlugin);
-            client.addPlugin(LeakCanaryFlipperPlugin())
+            //client.addPlugin(LeakCanaryFlipperPlugin())
             client.start()
         }
     }
