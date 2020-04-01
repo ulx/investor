@@ -75,7 +75,7 @@ dependencies {
     // default dependencies
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     api(LibraryDependency.KOTLIN)
-   // implementation(LibraryDependency.PLAY_CORE)
+    // implementation(LibraryDependency.PLAY_CORE)
 
     // androidx support libraries
     api(LibraryDependency.MATERIAL)
@@ -93,7 +93,7 @@ dependencies {
 
     api(LibraryDependency.NAVIGATION_FRAGMENT_KTX)
     api(LibraryDependency.NAVIGATION_UI_KTX)
-   // api(LibraryDependency.NAVIGATION_DYNAMIC_FEATURE_FRAGMENT)
+    // api(LibraryDependency.NAVIGATION_DYNAMIC_FEATURE_FRAGMENT)
 
     // fragment
     api(LibraryDependency.FRAGMENT)
@@ -106,14 +106,14 @@ dependencies {
     api(LibraryDependency.KOIN_ANDROIDX_VIEW_MODEL)
 
     // flipper - пока под сомнением, возможно достаточно студии
-    debugImplementation ("com.facebook.flipper:flipper:0.34.0")
-    debugImplementation ("com.facebook.soloader:soloader:0.8.2")
-    debugImplementation ("com.facebook.flipper:flipper-litho-plugin:0.34.0")
-    debugImplementation ("com.facebook.flipper:flipper-network-plugin:0.34.0")
-    releaseImplementation ("com.facebook.flipper:flipper-noop:0.34.0")
-   // debugImplementation ("com.facebook.flipper:flipper-leakcanary-plugin:0.34.0")
-   // debugImplementation ("com.squareup.leakcanary:leakcanary-android:1.6.3")
-   // releaseImplementation ("com.squareup.leakcanary:leakcanary-android-no-op:1.6.1")
+    debugImplementation("com.facebook.flipper:flipper:0.34.0")
+    debugImplementation("com.facebook.soloader:soloader:0.8.2")
+    debugImplementation("com.facebook.flipper:flipper-litho-plugin:0.34.0")
+    debugImplementation("com.facebook.flipper:flipper-network-plugin:0.34.0")
+    releaseImplementation("com.facebook.flipper:flipper-noop:0.34.0")
+    // debugImplementation ("com.facebook.flipper:flipper-leakcanary-plugin:0.34.0")
+    // debugImplementation ("com.squareup.leakcanary:leakcanary-android:1.6.3")
+    // releaseImplementation ("com.squareup.leakcanary:leakcanary-android-no-op:1.6.1")
 
     // test base
     addTestDependencies()
