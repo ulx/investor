@@ -71,6 +71,7 @@ dependencies {
     api(project(ModuleDependency.LIBRARY_CORE))
     api(project(ModuleDependency.LIBRARY_NETWORK))
     api(project(ModuleDependency.LIBRARY_STORAGE))
+    api(project(ModuleDependency.LIBRARY_DESIGN))
 
     // default dependencies
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
@@ -78,9 +79,9 @@ dependencies {
     // implementation(LibraryDependency.PLAY_CORE)
 
     // androidx support libraries
-    api(LibraryDependency.MATERIAL)
-    api(LibraryDependency.RECYCLER_VIEW)
-    api(LibraryDependency.CONSTRAINT_LAYOUT)
+//    api(LibraryDependency.MATERIAL)
+//    api(LibraryDependency.RECYCLER_VIEW)
+//    api(LibraryDependency.CONSTRAINT_LAYOUT)
 
     api(LibraryDependency.CORE_KTX)
     api(LibraryDependency.APP_COMPACT)

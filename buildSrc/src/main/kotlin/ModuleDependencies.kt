@@ -10,6 +10,7 @@ object ModuleDependency {
     const val LIBRARY_CORE = "$LIBRARY:core"
     const val LIBRARY_STORAGE = "$LIBRARY:storage"
     const val LIBRARY_NETWORK = "$LIBRARY:network"
+    const val LIBRARY_DESIGN = "$LIBRARY:designlib"
 
     private const val FEATURE = ":feature"
     const val FEATURE_SIMPLE = "$FEATURE:simplefeature"
@@ -26,6 +27,7 @@ object ModuleDependency {
         LIBRARY_CORE,
         LIBRARY_STORAGE,
         LIBRARY_NETWORK,
+         LIBRARY_DESIGN,
         FEATURE_SIMPLE,
         FEATURE_LOGIN,
         FEATURE_DASHBOARD)
