@@ -79,9 +79,25 @@ dependencies {
     // implementation(LibraryDependency.PLAY_CORE)
 
     // androidx support libraries
-//    api(LibraryDependency.MATERIAL)
-//    api(LibraryDependency.RECYCLER_VIEW)
-//    api(LibraryDependency.CONSTRAINT_LAYOUT)
+   // api(LibraryDependency.MATERIAL)
+    api(LibraryDependency.RECYCLER_VIEW)
+    api(LibraryDependency.CONSTRAINT_LAYOUT)
+    api("androidx.appcompat:appcompat:1.1.0")
+
+
+//    implementation platform.androidX.appcompat
+//            implementation platform.androidX.legacySupportV4
+//            implementation platform.androidX.materialDesign
+//            implementation platform.androidX.constraintLayout
+//            implementation platform.androidX.dynamicAnimation
+//
+//            implementation platform.androidX.cardView
+//            implementation platform.customViews.calendarlistview
+//            implementation(platform.androidX.lifecycleExtensions) {
+//                exclude group: 'com.android.support'
+//            }
+
+    implementation("io.supercharge:shimmerlayout:2.1.0")
 
     api(LibraryDependency.CORE_KTX)
     api(LibraryDependency.APP_COMPACT)

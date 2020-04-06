@@ -1,2 +1,2 @@
 configurations.maybeCreate("default")
-artifacts.add("default", file("DesignSystemCoreLib-debug.aar"))
+artifacts.add("default", file("DesignSharedLib-release.aar"))
