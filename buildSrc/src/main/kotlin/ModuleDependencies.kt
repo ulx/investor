@@ -16,6 +16,7 @@ object ModuleDependency {
     const val FEATURE_SIMPLE = "$FEATURE:simplefeature"
     const val FEATURE_LOGIN = "$FEATURE:login"
     const val FEATURE_DASHBOARD = "$FEATURE:dashboard"
+    const val FEATURE_UITESTS = "$FEATURE:uitests"
 //    const val FEATURE_BALANCE = "$FEATURE:balance"
 //    const val FEATURE_MARKET = "$FEATURE:market"
 //    const val FEATURE_NEWS = "$FEATURE:news"
@@ -30,7 +31,8 @@ object ModuleDependency {
          LIBRARY_DESIGN,
         FEATURE_SIMPLE,
         FEATURE_LOGIN,
-        FEATURE_DASHBOARD)
+        FEATURE_DASHBOARD,
+         FEATURE_UITESTS)
 
     fun getDynamicFeatureModules() = getAllModules
         .filter { it.startsWith(FEATURE) }

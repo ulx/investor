@@ -3,6 +3,7 @@ package ru.sberinvestor
 import android.os.Build
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import org.junit.Ignore
 import org.junit.Test
 import org.junit.runner.RunWith
 //import org.robolectric.annotation.Config
@@ -13,6 +14,7 @@ import ru.sberinvestor.dashboard.DashboardFragment
 //@Config(sdk = [Build.VERSION_CODES.P])
 class DashboardSuite{
     @Test
+    @Ignore
     fun testEventFragment() {
         val scenario = launchFragmentInContainer<DashboardFragment>()
         scenario.recreate()

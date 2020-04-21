@@ -1,3 +1,4 @@
+import org.gradle.api.Project
 import org.gradle.api.artifacts.Dependency
 import org.gradle.api.artifacts.ProjectDependency
 import org.gradle.api.artifacts.dsl.DependencyHandler
@@ -24,6 +25,11 @@ fun DependencyHandler.addTestDependencies() {
     androidTestImplementation(LibraryDependency.FRAGMENT_TESTING)
 }
 
+fun DependencyHandler.addHackTestDependencies(project: Project) {
+    testRuntimeOnly(project.files("${project.rootDir}/app/build/intermediates/app_classes/debug/classes.jar"))
+    //отработает только после успешного предыдущего билда
+    androidTestRuntimeOnly(project.files("${project.rootDir}/app/build/intermediates/app_classes/debug/classes.jar"))
+}
 
 /*
  * These extensions mimic the extensions that are generated on the fly by Gradle.
@@ -47,6 +53,12 @@ private fun DependencyHandler.testImplementation(dependencyNotation: Any): Depen
 
 private fun DependencyHandler.androidTestImplementation(dependencyNotation: Any): Dependency? =
     add("androidTestImplementation", dependencyNotation)
+
+private fun DependencyHandler.testRuntimeOnly(dependencyNotation: Any): Dependency? =
+        add("testRuntimeOnly", dependencyNotation)
+
+private fun DependencyHandler.androidTestRuntimeOnly(dependencyNotation: Any): Dependency? =
+        add("androidTestRuntimeOnly", dependencyNotation)
 
 private fun DependencyHandler.project(
     path: String,

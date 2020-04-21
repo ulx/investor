@@ -6,6 +6,7 @@
     <string name="title_market">Module Market</string>
     <string name="title_news">Module News</string>
     <string name="title_profile">Module Profile</string>
+    <string name="title_uitests">Module UI Tests</string>
 
     <!--Bottom menu-->
     <string name="balance">Balance</string>

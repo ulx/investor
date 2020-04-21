@@ -1,4 +1,4 @@
-package ru.sberbank.simple
+package ru.sberbank.storage
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
