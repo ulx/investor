@@ -9,7 +9,7 @@
     android:gravity="center">
 
     <TextView
-        android:id="@+id/underConstructionTextView"
+        android:id="@+id/profileUnderConstructionTextView"
         android:text="@string/under_construction_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -10,7 +10,7 @@
     tools:ignore="MissingDefaultResource">
 
     <TextView
-        android:id="@+id/underConstructionTextView"
+        android:id="@+id/dashboardUnderConstructionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -62,19 +62,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/profile"
-        app:layout_constraintEnd_toStartOf="@+id/button_login"
         app:layout_constraintBottom_toBottomOf="@+id/button_news"
-        app:layout_constraintStart_toEndOf="@+id/button_news" />
-
-    <Button
-        android:id="@+id/button_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/login"
-        app:layout_constraintBottom_toBottomOf="@+id/button_profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button_profile" />
-
+        app:layout_constraintStart_toEndOf="@+id/button_news"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -53,5 +53,5 @@ dependencies {
     implementation(LibraryDependency.RETROFIT_GSON)
     implementation(LibraryDependency.GSON)
 
-  //  addTestDependencies()
+    addTestDependencies()
 }

@@ -36,9 +36,6 @@ class DashboardFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FmtDashboardSberBinding.inflate(inflater, container, false)
-        binding.buttonLogin.setOnClickListener {
-            findNavController().navigate(DashboardFragmentDirections.actionToLogin())
-        }
 
         binding.buttonBalance.setOnClickListener {
             childFragmentManager.beginTransaction()
@@ -75,7 +72,7 @@ class DashboardFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel.count.observe(viewLifecycleOwner, Observer {
-            binding.underConstructionTextView.text = it.toString()
+            binding.dashboardUnderConstructionTextView.text = it.toString()
         })
         val i = viewModel.count.value ?: -1
         viewModel.setCount( i + 1)

@@ -8,9 +8,6 @@
         android:name="ru.sberinvestor.dashboard.DashboardFragment"
         android:label="DashboardFragment">
         <action
-            android:id="@+id/action_to_login"
-            app:destination="@+id/feature_login_nav" />
-        <action
             android:id="@+id/action_to_balance"
             app:destination="@+id/feature_balance_nav" />
         <action

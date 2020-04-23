@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import org.koin.androidx.viewmodel.ext.android.stateViewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
@@ -31,6 +32,10 @@ class LoginFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FmtLoginSberBinding.inflate(inflater, container, false)
+
+        binding.loginButton.setOnClickListener {
+            findNavController().navigate(LoginFragmentDirections.actionToDashboard())
+        }
         return binding.root
     }
 
@@ -42,7 +47,7 @@ class LoginFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel.count.observe(viewLifecycleOwner, Observer {
-            binding.underConstructionTextView.text = it.toString()
+            binding.loginUnderConstructionTextView.text = it.toString()
         })
         val i = viewModel.count.value ?: -1
         viewModel.setCount( i + 1)

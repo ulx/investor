@@ -11,7 +11,7 @@
     tools:ignore="MissingDefaultResource">
 
     <TextView
-        android:id="@+id/underConstructionTextView"
+        android:id="@+id/loginUnderConstructionTextView"
         android:text="@string/under_construction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,5 +21,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/login"
+        app:layout_constraintTop_toBottomOf="@+id/loginUnderConstructionTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

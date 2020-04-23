@@ -1,4 +1,4 @@
-package ru.sberbank.simple
+package ru.sberbank.network
 
 import org.junit.Test
 

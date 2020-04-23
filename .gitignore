@@ -22,3 +22,5 @@
 .idea/vcs.xml
 buildSrc/build/
 /reports/
+.idea/
+build/

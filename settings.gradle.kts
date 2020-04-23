@@ -18,7 +18,8 @@ include(":app",
     "$library:storage",
     "$feature:simplefeature",
     "$feature:login",
-    "$feature:dashboard"
+    "$feature:dashboard",
+    "$feature:uitests"
 )
 
 pluginManagement {

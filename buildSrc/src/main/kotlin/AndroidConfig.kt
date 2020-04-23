@@ -8,7 +8,7 @@ object AndroidConfig {
     const val VERSION_NAME = "1.0"
 
     const val ID = "ru.sberbank.sberinvestor"
-    const val TEST_INSTRUMENTATION_RUNNER = "androidx.test.ext.junit.runners.AndroidJUnit4"
+    const val TEST_INSTRUMENTATION_RUNNER = "androidx.test.runner.AndroidJUnitRunner"
 }
 
 interface BuildType {
